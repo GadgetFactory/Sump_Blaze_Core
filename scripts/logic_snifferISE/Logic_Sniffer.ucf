@@ -1,0 +1,86 @@
+##################################################################################
+## la.ucf
+##
+## Author: Michael "Mr. Sump" Poppitz
+##
+## Details: http://sump.org/projects/analyzer/
+##
+## Contains assignment and iostandard information for
+## all used pins as well as timing and area constraints.
+##
+## MODIFIED for use of Xilinx Spartan 3e Starter Kit
+## MODIFIED for use with ButterFly Platform S3E Cocoon
+## MODIFIED for use with Logic Sniffer
+## Visit www.GadgetFactory.net or www.dangerousprototypes.com for more information
+##################################################################################
+# Crystal Clock - use 50MHz onboard oscillator
+NET "xtalClock" LOC = "P41" |IOSTANDARD = LVCMOS33 ;
+TIMESPEC TS_xtalClock = PERIOD "xtalClock" 20 ns HIGH 50%;
+# external Clock - use Auxiliary clock
+NET "extClockIn"  LOC = "P32" |IOSTANDARD = LVCMOS33 ;	
+NET "extClockOut"  LOC = "P33" |IOSTANDARD = LVCMOS33 ;
+NET "extTriggerIn"  LOC = "P26" |IOSTANDARD = LVCMOS33 | PULLDOWN;
+NET "extTriggerOut"  LOC = "P34" |IOSTANDARD = LVCMOS33 ;
+
+
+#--Inside row numbering
+NET "input<0>" LOC = "P83" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<1>" LOC = "P84" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<2>" LOC = "P85" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<3>" LOC = "P86" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<4>" LOC = "P88" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<5>" LOC = "P89" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<6>" LOC = "P90" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<7>" LOC = "P91" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<8>" LOC = "P92" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<9>" LOC = "P94" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  	
+NET "input<10>" LOC = "P95" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;  
+NET "input<11>" LOC = "P98" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<12>" LOC = "P2" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<13>" LOC = "P3" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<14>" LOC = "P4" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<15>" LOC = "P5" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<16>" LOC = "P53" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<17>" LOC = "P54" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<18>" LOC = "P57" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<19>" LOC = "P58" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<20>" LOC = "P60" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<21>" LOC = "P61" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<22>" LOC = "P62" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<23>" LOC = "P63" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<24>" LOC = "P65" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<25>" LOC = "P66" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<26>" LOC = "P67" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<27>" LOC = "P68" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<28>" LOC = "P70" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<29>" LOC = "P71" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<30>" LOC = "P78" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+NET "input<31>" LOC = "P79" |IOSTANDARD = LVCMOS33 |SLEW = FAST |DRIVE = 8 ;	
+
+NET "armLED"  LOC = "P9" |IOSTANDARD = LVCMOS33 ;
+NET "triggerLED"  LOC = "P10" |IOSTANDARD = LVCMOS33 ;
+
+## SPI
+NET "dataReady"  LOC = "P35" |IOSTANDARD = LVCMOS33 ;
+NET "miso"  LOC = "P36" |IOSTANDARD = LVCMOS33 ;
+NET "mosi"  LOC = "P38" |IOSTANDARD = LVCMOS33 ;
+NET "sclk"  LOC = "P40" |IOSTANDARD = LVCMOS33 ;
+NET "cs"    LOC = "P44" |IOSTANDARD = LVCMOS33 ; #Shared Flash_SO line
+#NET "dataReady"  LOC = "P36" |IOSTANDARD = LVCMOS33 ;
+#NET "miso"  LOC = "P44" | IOSTANDARD = LVCMOS33 ;
+#NET "mosi"  LOC = "P27" | IOSTANDARD = LVCMOS33 ;
+#NET "sclk"  LOC = "P50" | IOSTANDARD = LVCMOS33 ;
+#NET "cs"    LOC = "P35" | IOSTANDARD = LVCMOS33 ; 
+NET "flashcs" LOC="P24" | IOSTANDARD = LVCMOS33 ;
+# ignore paths resulting from flags as those will
+# not change during time critical operations
+NET "Inst_core/Inst_flags/demux" TIG;
+NET "Inst_core/Inst_flags/filter" TIG;
+NET "Inst_core/Inst_flags/inverted" TIG;
+NET "Inst_core/Inst_flags/external" TIG;
+#NET "Inst_core/Inst_flags/data_size" TIG;
+#Created by Constraints Editor (xc3s250e-vq100-4) - 2011/02/18
+NET "xtalClock" TNM_NET = xtalClock;
+#Created by Constraints Editor (xc3s250e-vq100-4) - 2011/02/18
+NET "extClockIn" TNM_NET = extClockIn;
+TIMESPEC TS_extClockIn = PERIOD "extClockIn" 10 ns HIGH 50%;

@@ -1,0 +1,16 @@
+# Output products list for <BRAM6k36bit>
+BRAM6k36bit.asy
+BRAM6k36bit.gise
+BRAM6k36bit.ngc
+BRAM6k36bit.sym
+BRAM6k36bit.v
+BRAM6k36bit.veo
+BRAM6k36bit.vhd
+BRAM6k36bit.vho
+BRAM6k36bit.xco
+BRAM6k36bit.xise
+BRAM6k36bit_flist.txt
+BRAM6k36bit_xmdf.tcl
+_xmsgs\pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_readme.txt

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="sim" num="927" delta="new" >Generating component instance &apos;<arg fmt="%s" index="1">BRAM6k36bit</arg>&apos; of &apos;<arg fmt="%s" index="2">xilinx.com:ip:blk_mem_gen:4.3</arg>&apos; from &apos;<arg fmt="%s" index="3">C:\Xilinx\13.1\ISE_DS\ISE\coregen\ip\xilinx\primary\com\xilinx\ip\blk_mem_gen_v4_3\blk_mem_gen_v4_3.xcd</arg>&apos;.
+</msg>
+
+<msg type="warning" file="sim" num="975" delta="new" >You are using <arg fmt="%s" index="1">Block Memory Generator</arg> <arg fmt="%s" index="2">4.3</arg> which has been replaced with a new version. This version of the core will be removed in <arg fmt="%s" index="3">a future release</arg>. Cores in this state are not supported.
+</msg>
+
+<msg type="warning" file="sim" num="89" delta="new" >A core named &lt;<arg fmt="%s" index="1">BRAM6k36bit</arg>&gt; already exists in the output directory. Output products for this core may be overwritten.
+</msg>
+
+<msg type="info" file="sim" num="0" delta="new" ><arg fmt="%s" index="1">Generating SYM schematic symbol for &apos;BRAM6k36bit&apos;...</arg>
+</msg>
+
+</messages>
+

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\dbdev\My Dropbox\GadgetFactory\OpenBench-Logic-Sniffer\fpga\la\Openbenchrelease\Logic_Sniffer.ncd
+OUTFILE=C:\dbdev\My Dropbox\GadgetFactory\OpenBench-Logic-Sniffer\fpga\la\Openbenchrelease\Logic_Sniffer.bit
+FAMILY=Spartan3E
+PART=xc3s250e-4vq100
+WORKINGDIR=C:\dbdev\My Dropbox\GadgetFactory\OpenBench-Logic-Sniffer\fpga\la\Openbenchrelease
+LICENSE=WebPack
+USER_INFO=175441551_0_0_333
