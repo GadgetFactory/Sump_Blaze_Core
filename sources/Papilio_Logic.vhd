@@ -39,21 +39,30 @@ use ieee.std_logic_unsigned.all;
 entity Papilio_Logic is
 	port(
 		CLK : in std_logic;
-		extClockIn : in std_logic;
+--		extClockIn : in std_logic;
 --		extClockOut : out std_logic;
-		extTriggerIn : in std_logic;
-		extTriggerOut : out std_logic;
+--		extTriggerIn : in std_logic;
+--		extTriggerOut : out std_logic;
 		input : in std_logic_vector(31 downto 0);
 		rx : in std_logic;
 		tx : out std_logic;
+		
+		--External SRAM
+		data : inout std_logic_vector(15 downto 0);
+		addr : out std_logic_vector(17 downto 0);
+		we : out std_logic;
+		oe : out std_logic;
+		ce : out std_logic;
+--		be : out std_logic;	
+		
 --		miso : out std_logic;
 --		mosi : in std_logic;
 --		sclk : in std_logic;
 --		cs : in std_logic;
 --		dataReady : out std_logic;
-		adc_cs_n : inout std_logic;
-		armLED : out std_logic;
-		triggerLED : out std_logic
+		adc_cs_n : inout std_logic
+--		armLED : out std_logic;
+--		triggerLED : out std_logic
 	);
 end Papilio_Logic;
 
@@ -135,6 +144,22 @@ architecture behavioral of Papilio_Logic is
 			write : in std_logic
 		);
 	end component;
+	
+	COMPONENT sram
+	PORT(
+		clock : IN std_logic;
+		input : IN std_logic_vector(35 downto 0);
+		read : IN std_logic;
+		write : IN std_logic;    
+		ramIO1 : INOUT std_logic_vector(15 downto 0);      
+		output : OUT std_logic_vector(35 downto 0);
+		ramA : OUT std_logic_vector(17 downto 0);
+		ramWE : OUT std_logic;
+		ramOE : OUT std_logic;
+		ramCE1 : OUT std_logic;
+		ramUB1 : OUT std_logic
+		);
+	END COMPONENT;	
 
 	signal cmd : std_logic_vector (39 downto 0);
 	signal memoryIn, memoryOut : std_logic_vector (35 downto 0);
@@ -142,6 +167,14 @@ architecture behavioral of Papilio_Logic is
 	signal clock : std_logic;
 	signal read, write, execute, send, busy : std_logic;
 	signal tx_bytes : integer range 0 to 4;
+	
+	--tmp
+	signal extClockIn : std_logic;
+	signal	extClockOut :  std_logic;
+	signal	extTriggerIn :  std_logic := '0';
+	signal	extTriggerOut : std_logic;
+	signal		armLED :  std_logic;
+	signal	triggerLED :  std_logic;
 	
 	--Constants for UART
 	constant FREQ : integer := 100000000;				-- limited to 100M by onboard SRAM
@@ -217,13 +250,35 @@ begin
 		tx_bytes => tx_bytes
 	);
 
-	Inst_sram: sram_bram
-	port map(
+--	data <= (others => '1');
+--	addr <= (others => '1');
+----	memoryIn <= (others => '1');
+--	we <= '1';
+--	oe <= '1';
+--	ce <= '1';
+
+	Inst_sram: sram PORT MAP(
 		clock => clock,
 		output => memoryIn,
 		input => memoryOut,
 		read => read,
-		write => write
+		write => write,
+		ramIO1 => data,
+		ramA => addr,
+		ramWE => we,
+		ramOE => oe,
+		ramCE1 => ce,
+		ramUB1 => open
 	);
+
+--	Inst_sram: sram_bram
+--	port map(
+--		clock => clock,
+--		output => memoryIn,
+--		input => memoryOut,
+--		read => read,
+--		write => write
+--	);
+
 end behavioral;
 
