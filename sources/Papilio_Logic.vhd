@@ -250,13 +250,6 @@ begin
 		tx_bytes => tx_bytes
 	);
 
---	data <= (others => '1');
---	addr <= (others => '1');
-----	memoryIn <= (others => '1');
---	we <= '1';
---	oe <= '1';
---	ce <= '1';
-
 	Inst_sram: sram PORT MAP(
 		clock => clock,
 		output => memoryIn,
