@@ -178,8 +178,10 @@ architecture behavioral of Papilio_Logic is
 	
 	--Constants for UART
 	constant FREQ : integer := 100000000;				-- limited to 100M by onboard SRAM
-	constant TRXSCALE : integer := 54; 					-- 16 times the desired baud rate. Example 100000000/(16*115200) = 54
-	constant RATE : integer := 115200;					-- maximum & base rate	
+--	constant TRXSCALE : integer := 54; 					-- 16 times the desired baud rate. Example 100000000/(16*115200) = 54
+	constant TRXSCALE : integer := 10; 					-- 16 times the desired baud rate. Example 100000000/(16*115200) = 54
+--	constant RATE : integer := 115200;					-- maximum & base rate	
+	constant RATE : integer := 625000;					-- maximum & base rate	
 	constant SPEED	: std_logic_vector (1 downto 0) := "00";	--Sets the speed for UART communications
 	
 	
